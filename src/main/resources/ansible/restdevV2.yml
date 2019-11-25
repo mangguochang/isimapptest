@@ -1,0 +1,21 @@
+- hosts: dev
+  remote_user: root
+  tasks:
+    - name:  remove docker old app 
+      command: rm -rf  /opt/target/{{data}}/{{branch}}
+    - name:  mkdir  branch  files 
+      command: chdir=/opt/target/{{data}}/    mkdir {{branch}}
+    - name:  git clone templateName   
+      command: chdir=/opt/target/{{data}}/{{branch}}    git clone  -b  {{branch}}  {{giturl}}
+    - name:  remove  old app  properties
+      command: rm -rf  /opt/target/{{data}}/{{branch}}/src/main/resources/application.properties
+    - name: copy source
+      command: cp -rf  /opt/gitclone/{{data}}/{{branch}}/application.properties    /opt/target/{{data}}/{{branch}}/{{data}}/src/main/resources/
+    - name: git add
+      command:  chdir=/opt/target/{{data}}/{{branch}}/{{data}}   git add .
+    - name: git commit
+      command:  chdir=/opt/target/{{data}}/{{branch}}/{{data}}   git commit -m  "commit"
+    - name: git push
+      command:  chdir=/opt/target/{{data}}/{{branch}}/{{data}}   git push origin {{branch}}
+    - name: BuildConfigInstantiate
+      command:  curl {{hosturl}}/BuildConfigInstantiate?name={{appname}}

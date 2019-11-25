@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd                http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd">
+    <!-- 必填 address - WSDL目标服务地址-->
+    <!-- 必填 serviceName - WSDL目标服务地址-->
+    <!-- 必填 endpointName - WSDL目标服务结束名称-->
+    <!-- 必填 xmlns:ns1 - WSDL目标服务命名空间-->
+    <cxf:cxfEndpoint id="oneWayTtEndpoint"
+                     address="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"
+                     serviceName="ns1:WeatherWebService" endpointName="ns1:WeatherWebServiceSoap"
+                     xmlns:ns1="http://WebXml.com.cn/">
+        <cxf:properties>
+            <entry key="dataFormat" value="RAW" />
+            <entry key="schema-validation-enabled" value="false" />
+            <entry key="exceptionMessageCauseEnabled" value="true" />
+            <entry key="faultStackTraceEnabled" value="true" />
+            <!-- 必填 wsdlURL WSDL目标的服务WSDL-->
+            <entry key="wsdlURL" value="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx?wsdl" />
+            <entry key="loggingFeatureEnabled" value="true" />
+        </cxf:properties>
+    </cxf:cxfEndpoint>
+</beans>

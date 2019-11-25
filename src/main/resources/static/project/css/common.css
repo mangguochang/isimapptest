@@ -1,0 +1,7 @@
+/*公共css*/
+.button-center{
+    text-align: center;
+}
+.button-center>button {
+    margin-right: 10px;
+}

@@ -1,0 +1,53 @@
+#开发环境配置
+server:
+  #端口
+  port: 8088
+  context-path : /isimPlatform
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  profiles: dev
+  #redis配置
+#  redis:
+#      database: 1
+#      host: 127.0.0.1
+#      port: 6379
+#      password:      # 密码（默认为空）
+#      timeout: 6000  # 连接超时时长（毫秒）
+#      pool:
+#        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+#        max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-idle: 10      # 连接池中的最大空闲连接
+#        min-idle: 5       # 连接池中的最小空闲连接
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://106.52.166.188:3306/isim?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    username: root
+    password: 123123
+
+#日志
+logging:
+  config: classpath:log/logback.xml
+  path: D:\log\isim
+
+
+
+#附件存放地址
+remote :
+  uploadPath : D:\\devFileUpload
+  #获取应用发布状态
+  getBCStatusURL : http://corepanel-app-corepanel.apps.cluster-6ec8.6ec8.sandbox936.opentlc.com/getBCStatus
+
+
+
+keycloak :
+     auth-server-url : http://192.168.8.124:8080/auth
+     realm: springbootdemo
+     resource : springbootdemo
+     public-client: true
+     security-constraints[0].authRoles[0] : springbootdemo
+     security-constraints[0].securityCollections[0].patterns[0] : /*
+
+
+
+

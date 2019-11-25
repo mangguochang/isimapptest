@@ -1,0 +1,10 @@
+/*下拉框文字靠左*/
+.layui-form-select{
+    text-align: left;
+}
+
+/*必填文本标红*/
+label.required:before {
+    content: '* ';
+    color: red;
+}
