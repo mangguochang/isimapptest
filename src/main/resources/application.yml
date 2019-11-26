@@ -79,8 +79,8 @@ mybatis-plus:
 
 
 ansibleTemplate :
-      configbashpath: /opt/gitclone/
-      targetPath : /opt/target/
+      configbashpath: /opt/maven/repository/gitclone/
+      targetPath : /opt/maven/repository/target/
       hostSuffix: -corepanel.apps.cluster-d536.d536.sandbox882.opentlc.com
       hosturl: http://corepanel-s2i-app-corepanel.apps.cluster-d536.d536.sandbox882.opentlc.com
       restGit: https://codeSay:c43ff1fbc88f538e2d49594f01717611@gitee.com/codeSay/RestTemplate

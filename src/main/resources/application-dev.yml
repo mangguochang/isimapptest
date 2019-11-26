@@ -28,13 +28,13 @@ spring:
 #日志
 logging:
   config: classpath:log/logback.xml
-  path: D:\log\isim
+  path: /opt/maven/repository/log/isim
 
 
 
 #附件存放地址
 remote :
-  uploadPath : D:\\devFileUpload
+  uploadPath : /opt/maven/repository/devFileUpload
   #获取应用发布状态
   getBCStatusURL : http://corepanel-app-corepanel.apps.cluster-6ec8.6ec8.sandbox936.opentlc.com/getBCStatus
 
