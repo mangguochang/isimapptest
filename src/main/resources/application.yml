@@ -86,7 +86,7 @@ ansibleTemplate :
       restGit: https://codeSay:c43ff1fbc88f538e2d49594f01717611@gitee.com/codeSay/RestTemplate
       dbGit: https://codeSay:c43ff1fbc88f538e2d49594f01717611@gitee.com/codeSay/dbTemplate
       wsdlGit : https://codeSay:c43ff1fbc88f538e2d49594f01717611@gitee.com/codeSay/WSDLTemplate
-      ansibleBasepath : /opt/ansibleFile/
+      ansibleBasepath : /opt/maven/repository/
 
 #jwt config
 jwt:
